@@ -1,6 +1,8 @@
 /* JavaScript Notifications Styles */
 /* info, success, warning, error background and border colors */
 :root {
+    --notification-width: 30%;
+    --notification-width-responsive: 90%;
     --notification-info-bg: rgba(71, 118, 230, 0.7);
     --notification-info-border: #4776E6;
     --notification-success-bg: rgba(67, 233, 123, 0.7);
@@ -11,9 +13,14 @@
     --notification-error-border: #f5576c;
 }
 /* Each notification has a progressTimer bar at the bottom that shrinks over 5 seconds */
-#notifications-container { position: fixed; top: 20px; right: 20px; width: 80%; z-index: 1000; display: flex; flex-direction: column; gap: 12px; }
+#notifications-container { position: fixed; top: 20px; right: 20px; width: var(--notification-width); z-index: 1000; display: flex; flex-direction: column; gap: 12px; }
 /* view: Container is fixed at the top-right of the viewport and stacks notifications vertically */
 /* blur: Backdrop blur effect for modern look */
+@media (max-width: 768px) {
+    #notifications-container { width: var(--notification-width-responsive); left: 50%; transform: translateX(-50%); right: auto; }
+}
+/* view: On smaller screens, notifications are centered at the top */
+
 .notification { background: white; border-radius: 12px; padding: 16px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); display: flex; align-items: center; gap: 12px; animation: slideFromLeft 0.5s ease forwards, fadeToNothing 0.3s ease forwards 4.7s; position: relative; overflow: hidden; backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.3); transform: translateX(120%); }
 .notification-icon { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; }
 /* (optional) Color-coded icons for each notification type */
