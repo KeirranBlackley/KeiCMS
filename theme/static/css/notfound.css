@@ -1,0 +1,38 @@
+:root {
+    --error-primary: #003366;
+    --error-secondary: #1a1a1a;
+    --error-text: #eee;
+}
+
+body { background-color: var(--error-primary); }
+
+/* 404 Pages, etc */
+.error-page { min-height: 100vh; background: linear-gradient(0deg,var(--error-primary) 25%, var(--error-secondary) 100%); color: var(--error-text); position: relative; overflow-x: hidden; display: flex; align-items: center; justify-content: center; padding: 2rem 1rem; }
+
+/* 404 Error Page Styles */
+.error-container { position: relative; z-index: 10; max-width: 800px; width: 100%; text-align: center; }
+
+.error-number { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 2rem; font-size: 6rem; font-weight: bold; color: #eee; }
+.digit { text-shadow: 0 0 20px rgba(40, 40, 40 ,0.5); animation: pulse 2s ease-in-out infinite; }
+
+.error-message h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; background: linear-gradient(45deg, var(--error-text), var(--error-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.error-description { font-size: 1.1rem; line-height: 1.6; color: var(--error-text); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+.error-actions { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+.error-actions button { display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid transparent; cursor: pointer; font-size: 0.9rem; }
+.error-actions button.primary { background: var(--error-primary); color: var(--error-text); border-color: var(--error-primary); }
+.error-actions button.primary:hover { background: transparent; color: var(--error-primary); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,51,102,0.3); }
+.error-actions button.secondary { background: transparent; color: var(--error-text); border-color: rgba(238,238,238,0.3); }
+.error-actions button.secondary:hover { background: rgba(238,238,238,0.1); border-color: var(--error-text); transform: translateY(-2px); }
+
+/* 404 Responsive Design */
+@media (max-width: 768px) {
+    .error-number { font-size: 5rem; gap: 0.5rem; }
+    .error-message h1 { font-size: 2rem; }
+    .error-actions { flex-direction: column; align-items: center; }
+    .error-actions button { min-width: 200px; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .error-number { font-size: 4rem; }
+}
