@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #003366;
-    --secondary-color: #1a1a1a;
-    --colour: #eee;
-    --link-colour: #0055aa;
+    --footer-primary: #003366;
+    --footer-secondary: #1a1a1a;
+    --footer-colour: #eee;
+    --footer-link: #0055aa;
 
     --footer-max-width: 1200px;
 
@@ -11,30 +11,30 @@
     --support-badge-colour: #ffc107;
 }
 
-body { background-color: var(--primary-color); }
+body { background-color: var(--footer-primary); }
 
 /* KeiCMS Footer Styles */
-.keicms-footer { background: linear-gradient(0deg,rgba(0, 51, 102, 1) 25%, rgba(26, 26, 26, 1) 100%); color: var(--colour); padding: 3rem 0 0; position: relative; overflow: hidden; }
-.keicms-footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--primary-color), transparent); }
+.keicms-footer { background: linear-gradient(0deg,var(--footer-primary) 25%, var(--footer-secondary) 100%); color: var(--footer-colour); padding: 3rem 0 0; position: relative; overflow: hidden; }
+.keicms-footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--footer-primary), transparent); }
 
 /* Wrappers and Layout */
 .keicms-footer .container { max-width: var(--footer-max-width); margin: 20px auto; padding: 0 1rem; }
 .keicms-footer article.content { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem; margin-bottom: 2rem; }
 
 /* Left section with description and contact info */
-.keicms-footer section.description { color: var(--colour); line-height: 1.6; margin: 1.5rem 0; font-size: 0.95rem; }
-.keicms-footer section.description .logo h3 { color: var(--colour); font-size: 1.8rem; margin: 0; font-weight: 700; }
-.keicms-footer section.description .logo span { color: var(--colour); font-size: 0.9rem; font-style: italic; }
+.keicms-footer section.description { color: var(--footer-colour); line-height: 1.6; margin: 1.5rem 0; font-size: 0.95rem; }
+.keicms-footer section.description .logo h3 { color: var(--footer-colour); font-size: 1.8rem; margin: 0; font-weight: 700; }
+.keicms-footer section.description .logo span { color: var(--footer-colour); font-size: 0.9rem; font-style: italic; }
 .keicms-footer section.description .info { margin-top: 1.5rem; }
-.keicms-footer section.description .contact { display: flex; align-items: center; gap: 0.8rem; margin: 0.8rem auto; color: var(--colour); font-size: 0.9rem; }
-.keicms-footer section.description .contact a:hover { color: var(--link-colour); }
-.keicms-footer section.description .contact i { color: var(--secondary-color); width: 16px; text-align: center; }
+.keicms-footer section.description .contact { display: flex; align-items: center; gap: 0.8rem; margin: 0.8rem auto; color: var(--footer-colour); font-size: 0.9rem; }
+.keicms-footer section.description .contact a:hover { color: var(--footer-link); }
+.keicms-footer section.description .contact i { color: var(--footer-secondary); width: 16px; text-align: center; }
 /* Middle sections with links */
-.keicms-footer section h4 { color: var(--colour); font-size: 1em; margin-bottom: 1.5rem; font-weight: bold; position: relative; }
+.keicms-footer section h4 { color: var(--footer-colour); font-size: 1em; margin-bottom: 1.5rem; font-weight: bold; position: relative; }
 .keicms-footer section ul { text-align: right; list-style: none; padding: 0; margin: 0; }
 .keicms-footer section ul li { margin-bottom: 0.8rem; }
-.keicms-footer section ul li a { color: var(--colour); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: inline-block; position: relative; }
-.keicms-footer section ul li a:hover { color: var(--link-colour); transform: translateX(5px); }
+.keicms-footer section ul li a { color: var(--footer-colour); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: inline-block; position: relative; }
+.keicms-footer section ul li a:hover { color: var(--footer-link); transform: translateX(5px); }
 .keicms-footer section ul li a::before { content: ''; position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 0; height: 1px; background: #003366; transition: width 0.3s ease; }
 .keicms-footer section ul li a:hover::before { width: 6px; }
 
@@ -45,23 +45,23 @@ body { background-color: var(--primary-color); }
 /* Copyright and Version Info */
 .keicms-footer section.ps section.copyright { flex: 1; }
 .keicms-footer section.ps section.copyright p { margin: 0.5rem 0; color: #bbb; font-size: 0.9rem; }
-.keicms-footer section.ps section.copyright a { color: var(--link-colour); text-decoration: none; font-weight: 600; }
-.keicms-footer section.ps section.copyright a:hover { color: var(--colour); }
-.keicms-footer section.ps section.copyright span { color: var(--colour); }
+.keicms-footer section.ps section.copyright a { color: var(--footer-link); text-decoration: none; font-weight: 600; }
+.keicms-footer section.ps section.copyright a:hover { color: var(--footer-colour); }
+.keicms-footer section.ps section.copyright span { color: var(--footer-colour); }
 .keicms-footer section.ps section.copyright .version-info { font-size: small !important; opacity: 0.8; }
 .keicms-footer section.ps section.copyright .version-info i { color: var(--security-badge-colour); margin: 0 0.2rem; }
 /* Badges */
 .keicms-footer section.ps section.badges { display: flex; gap: 1rem; }
-.keicms-footer section.ps section.badges > div { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(238,238,238,0.1); border-radius: 20px; border: 1px solid rgba(238,238,238,0.2); font-size: 0.8rem; color: var(--colour); }
+.keicms-footer section.ps section.badges > div { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(238,238,238,0.1); border-radius: 20px; border: 1px solid rgba(238,238,238,0.2); font-size: 0.8rem; color: var(--footer-colour); }
 .keicms-footer section.ps section.badges .security-badge i { color: var(--security-badge-colour); }
 .keicms-footer section.ps section.badges .uptime-badge i { color: var(--uptime-badge-colour); }
 .keicms-footer section.ps section.badges .support-badge i { color: var(--support-badge-colour); }
 
 
 /* Back to Top Button */
-.back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 50px; height: 50px; background: var(--primary-color); color: var(--colour); border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,51,102,0.3); transition: all 0.3s ease; opacity: 0; visibility: hidden; z-index: 1000; }
+.back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 50px; height: 50px; background: var(--footer-primary); color: var(--footer-colour); border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,51,102,0.3); transition: all 0.3s ease; opacity: 0; visibility: hidden; z-index: 1000; }
 .back-to-top.visible { opacity: 1; visibility: visible; }
-.back-to-top:hover { background: var(--link-colour); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,51,102,0.4); }
+.back-to-top:hover { background: var(--footer-link); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,51,102,0.4); }
 
 
 /* Responsive Footer */
